@@ -17,6 +17,6 @@ const categoryData = {
     }
 };
 
-module.exports = [
+module.exports = {
     categoryData
-]
+}

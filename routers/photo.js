@@ -14,7 +14,7 @@ const { photoData } = require('../validations/photo.js');
 
 // Importing multer for body parsing multipart-form/data
 const multer = require('multer');
-const upload = multer({ dest: "uploads/posts/" });
+const upload = multer({ dest: "uploads/photos/" });
 
 // Routes
 router.get('/', photoController.index) // Get all photos

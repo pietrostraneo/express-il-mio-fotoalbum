@@ -20,6 +20,7 @@ const tknGenerator = require('../utils/jwt.js');
  * @returns {Object} - JSON response with token and user data
  */
 
+
 const register = async (req, res) => {
 
     try {

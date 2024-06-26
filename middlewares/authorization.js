@@ -7,7 +7,7 @@ module.exports = async (req, res, next) => {
     const { id } = req.params;
 
     try {
-        // Find the post by ID
+        // Find the photo by ID
         const photo = await prisma.photo.findUnique({
             where: {
                 id: id

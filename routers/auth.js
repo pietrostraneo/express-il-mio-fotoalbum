@@ -6,7 +6,7 @@ const authController = require('../controllers/auth.js');
 
 // Importing multer for body parsing multipart-form/data
 const multer = require('multer');
-const upload = multer({ dest: "uploads/posts/" });
+const upload = multer({ dest: "uploads/user/" });
 
 // Importing Middleware
 const validator = require('../middlewares/validator.js');

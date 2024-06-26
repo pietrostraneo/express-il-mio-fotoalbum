@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const getEndpoints = require('express-list-endpoints');
 require('dotenv').config();
 
 const port = process.env.PORT || 3000;
@@ -20,6 +21,9 @@ app.use(cors({
     origin: '*', // Everyone is allowed to access endpoints
 }));
 
+app.use(express.json());
+app.use(express.urlencoded());
+
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // ENDPOINTS
@@ -32,6 +36,8 @@ app.use('/api/contact', messageRouter); // Contacts Endpoint
 // Middlewares
 app.use(errorHandler);
 app.use(notFound);
+
+console.log(getEndpoints(app));
 
 // Server
 app.listen(port, () => {
