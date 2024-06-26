@@ -68,7 +68,16 @@ const show = async (req, res) => {
 const store = async (req, res) => {
 
     try {
-        const { title, description, visible, categories, userId } = req.body; // Retrieving from the body of the request all the parameters that will make up the photo
+
+        const { username: authUser } = req.user;
+
+        const user = await prisma.user.findUnique({
+            where: {
+                username: authUser
+            }
+        })
+
+        const { title, description, visible, categories } = req.body; // Retrieving from the body of the request all the parameters that will make up the photo
         const { file } = req; // Retrieving the image file from the request
 
         let parsedCategories = [];
@@ -91,7 +100,7 @@ const store = async (req, res) => {
             description,
             image: file.filename,
             visible: Boolean(visible),
-            userId: parseInt(userId),
+            userId: parseInt(user.id),
         }
 
         // Verify that categories have been assigned and connect the ids to data

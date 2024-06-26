@@ -39,14 +39,6 @@ const photoData = {
         },
         toBoolean: true // Automatically converts the value to a boolean
     },
-    userId: {
-        in: ["body"],
-        isInt: {
-            errorMessage: "User ID must be an integer",
-            bail: true
-        },
-        toInt: true // Automatically converts the value to an integer
-    },
     categories: {
         in: ["body"],
         isArray: {
