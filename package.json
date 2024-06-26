@@ -4,7 +4,7 @@
   "description": "",
   "main": "App.js",
   "scripts": {
-    "dev": "nodemon app.jx",
+    "dev": "nodemon app.js",
     "migrate": "npx prisma migrate dev"
   },
   "keywords": [],
