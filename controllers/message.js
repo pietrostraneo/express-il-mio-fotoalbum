@@ -3,28 +3,40 @@ const prisma = new PrismaClient();
 
 const index = async (req, res) => {
 
+    try {
+
+        const message = await prisma.message.findMany();
+        res.json(message);
+
+    } catch (error) {
+        console.log(error);
+    }
+
 }
 
-const show = async (req, res) => {
-
-}
 
 const store = async (req, res) => {
 
+    try {
+
+        const { email, text } = req.body;
+        const data = {
+            email,
+            text
+        };
+
+        const message = await prisma.message.create({ data });
+        res.json(message);
+
+    } catch (error) {
+        console.error(error);
+    }
+
 }
 
-const update = async (req, res) => {
 
-}
-
-const destroy = async (req, res) => {
-
-}
 
 module.exports = {
     index,
-    show,
-    store,
-    update,
-    destroy
+    store
 }
