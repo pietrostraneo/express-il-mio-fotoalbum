@@ -38,13 +38,6 @@ const photoData = {
             bail: true
         },
         toBoolean: true // Automatically converts the value to a boolean
-    },
-    categories: {
-        in: ["body"],
-        isArray: {
-            errorMessage: "Categories must be an array",
-            bail: true
-        }
     }
 };
 

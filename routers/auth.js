@@ -16,7 +16,7 @@ const { registerData, loginData } = require('../validations/auth.js');
 
 // Routes
 
-router.post('/sign-up', upload.single('image', validator(registerData), authController.register)) // Create new user
+router.post('/sign-up', upload.single('image'), validator(registerData), authController.register) // Create new user
 router.post('/login', validator(loginData), authController.login) // Generate token and login
 
 module.exports = router
