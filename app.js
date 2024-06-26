@@ -10,6 +10,7 @@ const cors = require('cors');
 const photoRouter = require('./routers/photo.js');
 const categoryRouter = require('./routers/category.js');
 const messageRouter = require('./routers/message.js');
+const authRouter = require('./routers/auth.js')
 
 // Importing Middlewares
 const errorHandler = require('./middlewares/errorHandler.js');
@@ -23,6 +24,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // ENDPOINTS
 
+app.use('/auth', authRouter); // Auth Endpoint
 app.use('/api/photos', photoRouter); // Photos Endpoint
 app.use('/api/categories', categoryRouter); // Category Endpoint
 app.use('/api/contact', messageRouter); // Contacts Endpoint
