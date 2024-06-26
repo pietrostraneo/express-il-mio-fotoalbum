@@ -11,6 +11,10 @@ const photoRouter = require('./routers/photo.js');
 const categoryRouter = require('./routers/category.js');
 const messageRouter = require('./routers/message.js');
 
+// Importing Middlewares
+const errorHandler = require('./middlewares/errorHandler.js');
+const notFound = require('./middlewares/notFound.js');
+
 app.use(cors({
     origin: '*', // Everyone is allowed to access endpoints
 }));
@@ -23,6 +27,11 @@ app.use('/api/photos', photoRouter); // Photos Endpoint
 app.use('/api/categories', categoryRouter); // Category Endpoint
 app.use('/api/contact', messageRouter); // Contacts Endpoint
 
+// Middlewares
+app.use(errorHandler);
+app.use(notFound);
+
+// Server
 app.listen(port, () => {
     console.log(`Server is running http://localhost:${port}`);
 })
