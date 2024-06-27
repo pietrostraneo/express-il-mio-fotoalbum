@@ -10,7 +10,7 @@ const authorization = require('../middlewares/authorization.js');
 const validator = require('../middlewares/validator.js');
 
 // Importing Validations
-const { photoData } = require('../validations/photo.js');
+const { createPhoto, editPhoto } = require('../validations/photo.js');
 
 // Importing multer for body parsing multipart-form/data
 const multer = require('multer');
@@ -24,8 +24,8 @@ router.get('/:id', photoController.show) // Show details of specific photo based
 
 router.use(authenticate); // Use authenticate middleware
 
-router.post('/', upload.single('image'), validator(photoData), photoController.store) // Upload new photo
-router.put('/:id', authorization, upload.single('image'), validator(photoData), photoController.update) // Edit photo
+router.post('/', upload.single('image'), validator(createPhoto), photoController.store) // Upload new photo
+router.put('/:id', authorization, upload.single('image'), validator(editPhoto), photoController.update) // Edit photo
 
 router.delete('/:id', authorization, photoController.destroy) // Delete photo
 

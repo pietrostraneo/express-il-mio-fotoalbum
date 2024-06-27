@@ -140,6 +140,7 @@ const update = async (req, res) => {
             return res.status(400).json({ message: "categories should be an array" });
         }
 
+
         const validCategories = parsedCategories.filter(c => c !== null); // Verify that the data passed is not null
 
         const data = {
@@ -156,8 +157,9 @@ const update = async (req, res) => {
         // Verify that categories have been assigned and connect the ids to data
         if (validCategories && validCategories.length > 0) {
             data.Category = {
-                connect: validCategories.map(c => ({ id: c }))
+                set: validCategories.map(c => ({ id: c }))
             };
+
         }
 
         const updatedPhoto = await prisma.photo.update({
