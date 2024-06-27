@@ -80,30 +80,6 @@ const editPhoto = {
     categories: {
         in: ["body"],
         optional: true,
-        custom: {
-            options: (value, { req }) => {
-                if (typeof value === 'string') {
-                    try {
-                        value = JSON.parse(value); // Converting categories into a Javascript Object
-                    } catch (error) {
-                        throw new Error("Categories must be a valid JSON string");
-                    }
-                } else if (Array.isArray(value)) {
-                    value = value
-                } else {
-                    throw new Error("Categories must be a valid JSON string or an array");
-                }
-            }
-        },
-        isObject: {
-            errorMessage: "Categories must be an object",
-            bail: true
-        },
-        isLength: {
-            options: { min: 1 },
-            errorMessage: "Categories must have at least one category",
-            bail: true
-        }
     }
 }
 

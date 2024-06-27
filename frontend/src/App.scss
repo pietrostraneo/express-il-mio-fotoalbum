@@ -1,5 +1,13 @@
+@use './scss/variables.module.scss' as *;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+header {
+  background-color: white !important;
+  position: sticky;
+  top: 0;
 }

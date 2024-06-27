@@ -1,0 +1,31 @@
+@use '../../scss/variables.module.scss' as *;
+@use '../../scss/mixins.module.scss' as *;
+
+
+.card {
+    background-color: white;
+    border-radius: $border-12;
+    padding: 1rem;
+    -webkit-box-shadow: 5px 5px 12px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 5px 5px 12px 1px rgba(0, 0, 0, 0.25);
+
+    img {
+        width: 416px !important;
+        height: 468px !important;
+        object-fit: cover;
+    }
+}
+
+.like {
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+        color: red;
+    }
+}
+
+.categories {
+    background-color: $button-color;
+    border-radius: $border-12;
+}

@@ -14,7 +14,8 @@ const index = async (req, res) => {
                 },
                 User: {
                     select: {
-                        username: true // Adds the ability to display the author's username
+                        username: true, // Adds the ability to display the author's username
+                        image: true
                     }
                 },
             }
@@ -46,7 +47,8 @@ const show = async (req, res) => {
                 },
                 User: {
                     select: {
-                        username: true // Adds the ability to display the author's username
+                        username: true, // Adds the ability to display the author's username
+                        image: true
                     }
                 },
             }

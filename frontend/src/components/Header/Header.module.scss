@@ -1,5 +1,27 @@
 @use '../../scss/variables.module.scss' as *;
+@use '../../scss/mixins.module.scss' as *;
 
 .logo_img {
-    width: 30%;
+    width: 20%;
+}
+
+.nav_items {
+    @include buttons
+}
+
+.searchbar {
+    position: relative;
+
+    input {
+        padding-left: 2rem;
+        @include input-text
+    }
+
+    .search_icon {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        font-size: 20px;
+    }
 }
