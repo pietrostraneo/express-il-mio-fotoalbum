@@ -1,0 +1,7 @@
+@use '../../scss/variables.module.scss' as *;
+@use '../../scss/mixins.module.scss' as *;
+
+.input {
+    @include input-text;
+    width: 50%;
+}

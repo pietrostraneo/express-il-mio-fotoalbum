@@ -1,0 +1,32 @@
+@use '../../../scss/variables.module.scss' as *;
+@use '../../../scss/mixins.module.scss' as *;
+
+.drop {
+    position: absolute;
+    top: 150%;
+    right: 0%;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    background-color: white;
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    button {
+        background-color: transparent;
+        color: black;
+        border: none;
+        padding: 1rem;
+        width: 100%;
+        transition: all 0.3s ease-in;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $soft-blue;
+        }
+    }
+
+    @include shadows;
+}

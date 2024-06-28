@@ -20,7 +20,6 @@
     border: 1px solid transparent;
     border-radius: 12px;
     height: 42px;
-    width: 100%;
     color: black;
 
     transition: all 0.2s ease-in;
@@ -29,4 +28,9 @@
     &:hover {
         border: 1px solid #3D4754;
     }
+}
+
+@mixin shadows {
+    -webkit-box-shadow: 5px 5px 12px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 5px 5px 12px 1px rgba(0, 0, 0, 0.25);
 }

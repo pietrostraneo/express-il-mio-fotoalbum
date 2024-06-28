@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // Importing components
 import Header from './components/Header/Header';
 import Feed from './components/Feed/Feed';
+import Login from './components/Login/Login';
 
 // Importing styles
 import './App.scss'
@@ -19,7 +20,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Feed />} />
-            <Route path="/" element={<div><h1>Home</h1></div>} />
+            <Route path="/login" element={<Login />} />
             <Route path="/" element={<div><h1>Home</h1></div>} />
             <Route path="/" element={<div><h1>Home</h1></div>} />
             <Route path="/" element={<div><h1>Home</h1></div>} />

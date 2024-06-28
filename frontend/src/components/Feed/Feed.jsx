@@ -21,7 +21,7 @@ export default function Feed() {
         // Fetching all photos
         async function fetchPhotos() {
             try {
-                let response = await axios.get(`${Api}/photos`);
+                let response = await axios.get(`${Api}/api/photos`);
                 let data = response.data;
                 let publishedPhoto = data.filter(d => d.visible === true)
                 setPhoto(publishedPhoto);
@@ -43,7 +43,7 @@ export default function Feed() {
                             <Card key={index} p={p} />
                         ))
                     ) : (
-                        <div className="col-12 col-md-8 mt-5 d-flex justify-content-center">
+                        <div className="col-12 col-md-8 d-flex vh-100 justify-content-center align-items-center">
                             <Loader />
                         </div>
                     )
