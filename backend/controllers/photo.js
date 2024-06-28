@@ -18,6 +18,9 @@ const index = async (req, res) => {
                         image: true
                     }
                 },
+            },
+            orderBy: {
+                createdAt: 'desc'
             }
         });
 

@@ -23,6 +23,16 @@
         transition: all 0.3s ease-in;
         cursor: pointer;
 
+        &:first-child {
+            border-top-left-radius: $border-12;
+            border-top-right-radius: $border-12;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: $border-12;
+            border-bottom-right-radius: $border-12;
+        }
+
         &:hover {
             background-color: $soft-blue;
         }

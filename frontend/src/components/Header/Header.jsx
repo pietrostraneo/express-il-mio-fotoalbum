@@ -62,7 +62,7 @@ export default function Header() {
                                 {/* User */}
                                 <ul className="d-flex gap-2 list-unstyled align-items-center justify-content-center m-0">
                                     {loginStatus ? (<>
-                                        <li className={`${styleHeader.nav_items}`}><FaPlus /></li>
+                                        <li className={`${styleHeader.nav_items}`}><Link to='/photo/create'><FaPlus /></Link></li>
                                         <li className='position-relative'>
                                             <img src={`http://localhost:3000/uploads/user/${user.image}` || 'https://i.pravatar.cc/300'} alt={user.username} className={`img-fluid ${styleHeader.profile_pic}`} onClick={() => {
                                                 handleDropdown()
