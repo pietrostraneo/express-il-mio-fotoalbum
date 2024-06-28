@@ -1,0 +1,23 @@
+@use '../../scss/variables.module.scss' as *;
+@use '../../scss/mixins.module.scss' as *;
+
+.input {
+    width: 60%;
+    padding-left: 0.5rem;
+    @include input-text;
+}
+
+.description_input {
+    @include input-text;
+    height: 25% !important;
+}
+
+.buttons {
+    @include buttons
+}
+
+.img {
+    width: 416px !important;
+    height: 468px !important;
+    object-fit: cover;
+}

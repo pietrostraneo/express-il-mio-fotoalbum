@@ -13,9 +13,12 @@ import checkLogin from '../../middlewares/checkLogin';
 
 // Importing 
 import { useState } from 'react';
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+
 
 export default function Header() {
+
+    const navigate = useNavigate()
 
     const [search, setSearch] = useState('');
 
@@ -31,6 +34,12 @@ export default function Header() {
         })
     }
 
+    const handleHome = (e) => {
+        e.stopPropagation();
+        navigate(`/`);
+    }
+
+
     return (
         <>
             <div className="container-fluid">
@@ -38,7 +47,7 @@ export default function Header() {
                     <div className="col-12 d-flex justify-content-between align-items-center">
 
                         <div className="logo w-50">
-                            <img src="/logo.png" alt="logo" className={`img-fluid ${styleHeader.logo_img}`} />
+                            <img src="/logo.png" alt="logo" className={`img-fluid ${styleHeader.logo_img}`} onClick={handleHome} />
                         </div>
 
                         <div className="nav d-flex gap-3">
@@ -69,8 +78,7 @@ export default function Header() {
                                             }} />
                                             {drop ? (<>
                                                 <MdArrowDropDown className='fs-3' />
-                                                <Dropdown />
-
+                                                <Dropdown username={user.username} />
                                             </>
                                             ) : (<MdArrowLeft className='fs-3' />)}
 

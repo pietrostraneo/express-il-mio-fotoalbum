@@ -4,13 +4,13 @@ const prisma = new PrismaClient();
 // Retrieve all categories records
 const index = async (req, res) => {
 
-    const { id } = req.params
+    const { username } = req.params
 
     try {
 
         const user = await prisma.user.findUnique({
             where: {
-                id: parseInt(id)
+                username: username
             }
         });
         res.json({

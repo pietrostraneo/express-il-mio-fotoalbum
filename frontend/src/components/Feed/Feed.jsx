@@ -37,7 +37,7 @@ export default function Feed() {
     return (
         <>
             <div className="container">
-                <div className={`row align-content-center mt-4 flex-column gap-4 pb-5 ${styleFeed.scroll} ${styleFeed.slide_in_bottom}`}>
+                <div className={`row align-content-center mt-4 flex-column gap-4 pb-5 ${styleFeed.slide_in_bottom}`}>
                     {photo.length > 0 ? (
                         photo.map((p, index) => (
                             <Card key={index} p={p} />
